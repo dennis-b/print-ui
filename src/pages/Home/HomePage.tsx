@@ -15,6 +15,9 @@ const useStyles = makeStyles((theme) => ({
 
 export const HomePage = () => {
 
+
+  console.log(">>>> HOME PAGE")
+
   const classes = useStyles();
   const [templates, setTemplates] = useState<any[]>([])
   const { post } = useFetch('https://admin.w2p-tools.com')
