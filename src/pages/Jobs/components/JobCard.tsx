@@ -1,16 +1,7 @@
 import React from 'react';
-import {
-  Button,
-  Card,
-  CardActions,
-  CardContent,
-  CardHeader,
-  CardMedia,
-  makeStyles,
-  Typography
-} from "@material-ui/core";
+import { Button, Card, CardActions, CardContent, CardHeader, makeStyles, Typography } from "@material-ui/core";
 import { useRecoilState, useRecoilValue } from "recoil";
-import { selectedJob, selectedTemplate } from '../../../state/atoms'
+import { selectedJob } from '../../../state/atoms'
 import { useHistory } from 'react-router-dom';
 import { templateState } from "../../../state/selectors";
 import { StyledCardMedia, StyledImage } from '../JobsPage.styled';

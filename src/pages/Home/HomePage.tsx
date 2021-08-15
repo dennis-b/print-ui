@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useFetch } from "use-http";
 import { Box, Grid, makeStyles } from "@material-ui/core";
-import { validate, parse } from "fast-xml-parser";
 import { AUTH } from "../../constants";
 import { TemplateCard } from "./components/TemplateCard";
 import { parseTemplateData } from "../../utils/xml.utils";

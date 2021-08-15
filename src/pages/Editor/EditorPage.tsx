@@ -1,12 +1,8 @@
 import React, { useEffect } from 'react';
-import { useRecoilState, useRecoilValue } from "recoil";
-import { jobState, templateState } from "../../state/selectors";
+import { useRecoilValue } from "recoil";
+import { jobState } from "../../state/selectors";
 import { Box, makeStyles } from "@material-ui/core";
 import { StyledIframe } from './EditorPage.styed';
-import { useFetch } from "use-http";
-import { AUTH } from "../../constants";
-import { parseJobsData } from "../../utils/xml.utils";
-import { selectedJob } from "../../state/atoms";
 import { useHistory } from "react-router-dom";
 
 export const useRootStyles = makeStyles((theme) => ({
@@ -19,8 +15,6 @@ export const useRootStyles = makeStyles((theme) => ({
 }));
 
 export const EditorPage = () => {
-  const { attr: { t } } = useRecoilValue(templateState);
-  const { post, response } = useFetch('https://ids.w2p-tools.com')
   const job = useRecoilValue(jobState);
 
   const history = useHistory();

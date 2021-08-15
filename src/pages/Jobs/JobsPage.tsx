@@ -1,13 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { useRecoilState, useRecoilValue } from "recoil";
+import { useRecoilValue } from "recoil";
 import { templateState } from "../../state/selectors";
 import { Box, Grid, makeStyles } from "@material-ui/core";
 import { useFetch } from "use-http";
 import { AUTH } from "../../constants";
 import { parseJobsData } from "../../utils/xml.utils";
-import { selectedJob } from "../../state/atoms";
-import { useHistory } from "react-router-dom";
-import { TemplateCard } from "../Home/components/TemplateCard";
 import { JobCard } from "./components/JobCard";
 
 export const useRootStyles = makeStyles((theme) => ({
@@ -21,7 +18,7 @@ export const useRootStyles = makeStyles((theme) => ({
 
 export const JobsPage = () => {
   const { attr: { t } } = useRecoilValue(templateState);
-  const { post, response } = useFetch('https://ids.w2p-tools.com')
+  const { post } = useFetch('https://ids.w2p-tools.com')
   const [jobs, stJobs] = useState<any[]>([])
 
   useEffect(() => {
