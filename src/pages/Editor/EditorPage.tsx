@@ -32,7 +32,7 @@ export const EditorPage = () => {
 
     window.addEventListener("message", postMessageHandler)
 
-  }, [])
+  }, [history])
 
   const classes = useRootStyles();
   const src = `https://cdn.printui.com/editor/current/index.html?client=cloudinary&jobID=${job.value}`

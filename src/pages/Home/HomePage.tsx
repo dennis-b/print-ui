@@ -21,8 +21,9 @@ export const HomePage = () => {
 
   useEffect(() => {
     initializeTemplates()
-  }, [])
+  }, [initializeTemplates])
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   async function initializeTemplates() {
     const formData = new FormData();
     formData.append("auth", AUTH);

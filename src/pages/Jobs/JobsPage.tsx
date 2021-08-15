@@ -23,8 +23,9 @@ export const JobsPage = () => {
 
   useEffect(() => {
     getJobsData()
-  }, [])
+  }, [getJobsData])
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   async function getJobsData() {
     const formData = new FormData();
     formData.append("auth", AUTH);

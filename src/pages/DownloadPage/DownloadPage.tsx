@@ -1,6 +1,6 @@
 import React from 'react';
 import { useRecoilValue } from "recoil";
-import { jobState, templateState } from "../../state/selectors";
+import { jobState } from "../../state/selectors";
 import { useRootStyles } from "../Editor/EditorPage";
 import { Box, Grid } from "@material-ui/core";
 import Button from '@material-ui/core/Button';
@@ -28,8 +28,6 @@ function createAndDownloadBlobFile(body: any, filename: string, extension = 'jpe
 
 export const DownloadPage = () => {
   const job = useRecoilValue(jobState);
-  const { attr: { t } } = useRecoilValue(templateState);
-
   const classes = useRootStyles();
   const { post } = useFetch('https://ids.w2p-tools.com')
   const { post: postGetImage } = useFetch('https://ids.w2p-tools.com', { responseType: 'blob' })
