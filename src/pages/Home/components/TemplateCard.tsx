@@ -31,7 +31,11 @@ export function TemplateCard({ template }: any) {
 
   const onSelect = () => {
     setTemplate(template)
-    history.push('/jobs');
+
+    setTimeout(() => {
+      history.push('/jobs');
+    }, 500)
+
   }
   console.log('tmpl', tmpl)
 

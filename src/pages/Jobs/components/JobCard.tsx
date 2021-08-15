@@ -22,7 +22,9 @@ export function JobCard({ job }: any) {
 
   const onSelect = () => {
     setJob(job)
-    history.push('/editor');
+    setTimeout(() => {
+      history.push('/editor');
+    }, 500)
   }
 
   return (

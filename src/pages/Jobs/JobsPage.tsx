@@ -22,18 +22,18 @@ export const JobsPage = () => {
   const [jobs, stJobs] = useState<any[]>([])
 
   useEffect(() => {
+    async function getJobsData() {
+      const formData = new FormData();
+      formData.append("auth", AUTH);
+      formData.append("t", t);
+      const data = await post('//d003/getjobs.php', formData)
+      console.log('jobs', parseJobsData(data))
+      stJobs(parseJobsData(data))
+    }
     getJobsData()
-  }, [getJobsData])
+  }, [post, t])
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  async function getJobsData() {
-    const formData = new FormData();
-    formData.append("auth", AUTH);
-    formData.append("t", t);
-    const data = await post('//d003/getjobs.php', formData)
-    console.log('jobs', parseJobsData(data))
-    stJobs(parseJobsData(data))
-  }
+
 
   const classes = useRootStyles();
 

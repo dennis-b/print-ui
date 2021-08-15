@@ -17,21 +17,19 @@ export const HomePage = () => {
 
   const classes = useStyles();
   const [templates, setTemplates] = useState<any[]>([])
-  const { post, response } = useFetch('https://admin.w2p-tools.com')
+  const { post } = useFetch('https://admin.w2p-tools.com')
 
   useEffect(() => {
-    initializeTemplates()
-  }, [initializeTemplates])
-
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  async function initializeTemplates() {
-    const formData = new FormData();
-    formData.append("auth", AUTH);
-    const data = await post('/api/listtemplatesdetails.php', formData)
-    if (response.ok) {
+    async function initializeTemplates() {
+      const formData = new FormData();
+      formData.append("auth", AUTH);
+      const data = await post('/api/listtemplatesdetails.php', formData)
       setTemplates(parseTemplateData(data))
     }
-  }
+
+    initializeTemplates()
+  }, [post])
+
 
   return (
     <Box m={1} width={'100%'} height={'100%s'} className={classes.content}>
