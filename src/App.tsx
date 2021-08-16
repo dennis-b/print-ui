@@ -16,7 +16,7 @@ export const App = () => {
         <AppBar position="fixed">
           <Toolbar>
             <Typography variant="h6" noWrap>
-              Report UI
+              Print UI Example
             </Typography>
           </Toolbar>
         </AppBar>
